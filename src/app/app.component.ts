@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
+// El decorador @Component permite convertir una clase en un componente
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    // Las propiedades definidas en la clase AppComponent podran ser accedidas desde el archivo especificado como valor de la propiedad
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'bases';
+    public title:string = 'Bases de Angular'
 }
