@@ -25,7 +25,7 @@ export class CounterComponent {
         this.counter -= 1
     }
 
-    reset() {
+    reset(): void {
         this.counter = 0
     }
 }
