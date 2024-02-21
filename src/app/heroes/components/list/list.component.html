@@ -1,0 +1,23 @@
+<h3>Listado de heroes</h3>
+
+<!--
+    La directiva ngIf-else permite mostrar un template si la condicion evaluada retorna false.
+    Los template se identifican mediante un nombre y son referenciados mediante la sintaxis #reference_name
+-->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+    <h3 *ngIf="deletedHero">Heroe borrado <small class="text-danger">{{ deletedHero }}</small> </h3>
+</div>
+<!-- ng-template no se construye en el DOM, pero permite mostrar el contenido de los elementos agrupados en la interfaz -->
+<ng-template #nothingWasDeleted> <!-- Referencia local -->
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+<button *ngIf="heroNames.length > 0" (click)="removeLasthero()" class="btn btn-outline-danger">Borrar último heroe</button>
+
+<!--
+    Directiva *ngFor
+        Permite iterar una lista de elementos en el DOM
+-->
+<ul class="mt-2 list-group">
+    <li *ngFor="let hero of heroNames" class="list-group-item">{{ hero }}</li>
+</ul>

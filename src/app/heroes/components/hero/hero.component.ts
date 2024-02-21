@@ -14,7 +14,7 @@ export class HeroComponent {
         Cuando se realiza un cambio desde el lado del template HTML a las propiedades, dicho cambio se vera reflejado en la clase
 
      * One way binding
-        El valor de las propiedades de las clases solo se podra modificar desde la clase misma
+        El valor de las propiedades de las clases solo se podran modificar desde la clase misma, generalmente se utilizan metodos getter
     */
 
     get capitalizedName(): string {
