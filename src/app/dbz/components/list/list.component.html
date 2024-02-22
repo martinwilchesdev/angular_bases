@@ -1,5 +1,8 @@
 <h4>Listado</h4>
 <ul class="list-group">
-    <li class="list-group-item">Krillin - 500</li>
-    <li class="list-group-item">Goku - 10000</li>
+    <!-- La directiva *ngFor puede exponer el indice del elemento iterado a traves del objeto index -->
+    <li *ngFor="let character of charactersList; let x = index;" class="list-group-item">
+        <span class="text-primary">{{ x + 1 }}</span>.
+        {{ character.name }} - <strong>Power</strong> {{ character.power }}
+    </li>
 </ul>
