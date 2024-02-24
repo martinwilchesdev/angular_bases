@@ -5,12 +5,16 @@
     <div class="col">
         <!--
             El valor de una propiedad del componente padre al hijo se realiza desde la declaracion del componente hijo, añadiendo un par clave-valor.
-                ** clave = Identificador de la propiedad en el componente hijo
-                ** valor = Valor de la propiedad en el componente padre
+                ** clave = Identificador de la propiedad en el componente hijo [charactersList]
+                ** valor = Valor de la propiedad en el componente padre "characters"
         -->
-        <dbz-list [charactersList]="characters"></dbz-list>
+        <!--
+            Al emitir un evento desde un componente hijo a un componente padre, es necesario definir como propiedad en la definicion del componente hijo el nombre del evento emisor (onDelete) | (onNewCharacter) definido en el componente hijo.
+            Como valor de dicha propiedad se define el nombre del metodo que se definira en el componente padre, dicho metodo recibira un argumento el cual corresponde al valor emitido. La sintaxis de este parametro que representa el valor emitido es $event
+        -->
+        <dbz-list (onDelete)="onDeleteCharacter($event)" [charactersList]="characters"></dbz-list>
     </div>
     <div class="col">
-        <dbz-form></dbz-form>
+        <dbz-form (onNewCharacter)="onNewCharacter($event)"></dbz-form>
     </div>
 </div>

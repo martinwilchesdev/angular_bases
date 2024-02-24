@@ -1,6 +1,25 @@
 <h4>Agregar personaje</h4>
-<form class="row">
-    <input class="form-control mb-2" type="text" placeholder="Nombre del personaje" />
-    <input class="form-control mb-2" type="number" placeholder="Poder del personaje" />
+<!-- El evento ngSubmit evita que la pagina se recargue con el evento submit -->
+<form class="row" (ngSubmit)="emitCharacter()">
+    <!--
+        Los eventos que se definen como atributo de un elemento en el HTML se encierran entre parentesis (function)
+        Los atributos cuyo valor es una expresion de JavaScript se encierran entre llaves [property]
++        Los eventos y atributos que se asocian al mismo tiempo a un elemento HTML se encierran entre llaves y parentesis [()] | Two way data binding
+            Al utilizar la directiva ngModel dentro de una etiqueta de un formulario, es necesario especificar el atributo name
+    -->
+    <input
+        [(ngModel)]="character.name"
+        name="name"
+        class="form-control mb-2"
+        type="text"
+        placeholder="Nombre del personaje"
+    />
+    <input
+        [(ngModel)]="character.power"
+        name="power"
+        class="form-control mb-2"
+        type="number"
+        placeholder="Poder"
+    />
     <button class="btn btn-primary" type="submit">Agregar</button>
 </form>

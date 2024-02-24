@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { Character } from '../interfaces/character.interface'
+import { Character } from '../interfaces/character.interface';
 
 @Component({
     selector: 'app-dbz-main-page',
@@ -20,4 +20,14 @@ export class MainPageComponent {
             power: 7500
         }
     ]
+
+    // Metodos utilizados para recibir los valores emitidos desde los componentes hijos
+
+    onNewCharacter(character: Character): void {
+        this.characters.push(character)
+    }
+
+    onDeleteCharacter(index: number): void {
+        this.characters.splice(index, 1)
+    }
 }
